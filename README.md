@@ -43,7 +43,7 @@ java -jar ./target/evasion-1.0-SNAPSHOT.jar [player 1 port] [player 2 port] [max
 ```
 
 As an example if running with display using random players:
-In terminal run:
+
 ```
 java -jar ./target/evasion-1.0-SNAPSHOT.jar 9000 9001 100 10 127.0.0.1 8999
 node web.js 8999 8998
