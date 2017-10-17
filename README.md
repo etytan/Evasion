@@ -94,7 +94,7 @@ In response to each received game state message, the hunter should send the foll
 
 Note about diagonals:
 
-Diagonal is when x and y are both increasing and decreasing. Currently given a diagonal will always be created where Y is incremented first to start off the diagonal. EX: given (i,j) the diagonal (i-1,j-1), (i-1,j), (i,j), (i,j+1), (i+1,j+1) is created.
+Diagonal is when x and y are both increasing or both are decreasing. Currently given a diagonal will always be created where Y is incremented first to start off the diagonal. EX: given (i,j) the diagonal (i-1,j-1), (i-1,j), (i,j), (i,j+1), (i+1,j+1) is created.
 
 Counterdiagonal is where if x is increasing y is decreasing. The Counterdiagonal will always be created where Y is decremented first. EX: given(i,j) the diagonal (i-1,j+1) (i-1,j) (i,j), (i,j-1), (i+1,j-1) is created.
 
