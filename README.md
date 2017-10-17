@@ -41,12 +41,15 @@ java -jar ./target/evasion-1.0-SNAPSHOT.jar [player 1 port] [player 2 port] [max
 ```
 java -jar ./target/evasion-1.0-SNAPSHOT.jar [player 1 port] [player 2 port] [max walls] [wall placement delay] ([display host] [display port])
 ```
+
 As an example if running with display using random players:
 In terminal run:
+```
 java -jar ./target/evasion-1.0-SNAPSHOT.jar 9000 9001 100 10 127.0.0.1 8999
 node web.js 8999 8998
 python ./players/random_player.py 9000
 python ./players/random_player.py 9001
+```
 The display will be shown in your web browser here: http://127.0.0.1:8998/
 
 # Details
