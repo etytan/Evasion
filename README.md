@@ -108,20 +108,20 @@ First the pixels adjacent to both the hunter and the one being hit are considere
 +-+-+    +-+-+
 |*| |    |*|↗|
 +-+-+ -> +-+-+
-|*|↖|    |*| |
-+-+-+    +-+-+
+|*|↖|    |*| |  
++-+-+    +-+-+   (1)
 
 +-+-+    +-+-+
 |*|*|    |*|*|
 +-+-+ -> +-+-+
 | |↖|    |↙| |
-+-+-+    +-+-+
++-+-+    +-+-+   (2)
 
 +-+-+    +-+-+
 |*|*|    |*|*|
 +-+-+ -> +-+-+
 |*|↖|    |*|↘|
-+-+-+    +-+-+
++-+-+    +-+-+   (3)
 
 
 +-+-+
@@ -137,7 +137,7 @@ First the pixels adjacent to both the hunter and the one being hit are considere
 |*|*| | -> |*|*| |
 +-+-+-+    +-+-+-+
   | |↖|      |↙| |
-  +-+-+      +-+-+
+  +-+-+      +-+-+   (4)
 
   +-+        +-+
   |*|        |*|
@@ -145,7 +145,7 @@ First the pixels adjacent to both the hunter and the one being hit are considere
 | |*| | -> | |*|↗|
 +-+-+-+    +-+-+-+
   | |↖|      | | |
-  +-+-+      +-+-+
+  +-+-+      +-+-+   (5)
 
   +-+        +-+
   |*|        |*|
@@ -153,7 +153,7 @@ First the pixels adjacent to both the hunter and the one being hit are considere
 |*|*| | -> |*|*| |
 +-+-+-+    +-+-+-+
   | |↖|      | |↘|
-  +-+-+      +-+-+
+  +-+-+      +-+-+   (6)
 
   +-+        +-+
   | |        | |
@@ -161,7 +161,7 @@ First the pixels adjacent to both the hunter and the one being hit are considere
 | |*| | -> | |*| |
 +-+-+-+    +-+-+-+
   | |↖|      | |↘|
-  +-+-+      +-+-+
+  +-+-+      +-+-+   (7)
 ```
 
 (The same calculations are mirrored about the relevant axes for the other three directions in which the hunter can be traveling.)
