@@ -72,9 +72,13 @@ A horizontal wall is identified by: `0 [y] [x1] [x2]` where `y` is its y locatio
 
 A vertical wall is identified by: `1 [x] [y1] [y2]` where `x` is its x location, `y1` is the y location of its bottom-most pixel (i.e. smaller y value), and `y2` is the y location of its top-most pixel (i.e. larger y value).
 
-A diagonal wall is identified by: `2 [x1] [x2] [y1] [y2]` where the line from (x1,y1) to (x2,y2) represents the diagonal wall.
+A diagonal wall is identified by: `2 [x1] [x2] [y1] [y2] [builddirection]` where the line from (x1,y1) to (x2,y2) represents the diagonal wall and builddirection represents whether the line began by incrementing in the x or y direction from its starting point. The value  `builddirection` will be a 0 if the line was begun by building in the x direction from its starting point (x1,y1), or a 1 if the line was begun by building in the y direction.
 
-A counterdiagonal wall is identified by: `3 [x1] [x2] [y1] [y2]` where the line from (x1,y1) to (x2,y2) represents the counterdiagonal wall.
+As an example, given `2 0 1 0 1 0`, the line would be represented by the points: (0,0), (1,0), (1,1). Given `2 0 1 0 1 1`, the line would be represented by the points: (0,0), (0,1), (1,1).
+
+A counterdiagonal wall is identified by: `3 [x1] [x2] [y1] [y2] [builddirection]` where the line from (x1,y1) to (x2,y2) represents the counterdiagonal wall and builddirection represents whether the line began by incrementing in the x or y direction from its starting point. The value  `builddirection` will be a 0 if the line was begun by building in the x direction from its starting point (x1,y1), or a 1 if the line was begun by building in the y direction.
+
+As an example, given `3 0 1 1 0 0`, the line would be represented by the points: (0,1), (1,1), (1,0). Given `3 0 1 1 0 1`, the line would be represented by the points: (0,1), (0,0), (1,0).
 
 The order of the `{wall info}` sets is relevent; when the hunter references a wall to delete it should do so using the wall's place in this list, starting at 0.
 
