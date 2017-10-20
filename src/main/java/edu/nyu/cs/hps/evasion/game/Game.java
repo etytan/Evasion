@@ -125,6 +125,7 @@ public class Game {
         Point greater = new Point(pos);
         Point lesser = new Point(pos);
         int count = 0;
+        int builddirection = 0;
         while(!isOccupied(greater)){
             if(greater.equals(state.hunterPosAndVel.pos) || greater.equals(state.preyPos)){
                 return false;
@@ -158,17 +159,20 @@ public class Game {
         }
         if (count % 2 == 0) {
             lesser.y++;
+            builddirection = 0; //this means we start building by moving in the x direction
         }
         else {
             lesser.x++;
+            builddirection = 1; //this means we start building by moving in the y direction
         }
-        DiagonalWall diagonalWall = new DiagonalWall(lesser.x, greater.x, lesser.y, greater.y);
+        DiagonalWall diagonalWall = new DiagonalWall(lesser.x, greater.x, lesser.y, greater.y, builddirection);
         return addWall(diagonalWall);
     }
     else if (action == WallCreationType.COUNTERDIAGONAL) {
         Point greater = new Point(pos);
         Point lesser = new Point(pos);
         int count = 0;
+        int builddirection = 0;
         while(!isOccupied(greater)){
             if(greater.equals(state.hunterPosAndVel.pos) || greater.equals(state.preyPos)){
                 return false;
@@ -202,11 +206,13 @@ public class Game {
         }
         if (count % 2 == 0) {
             lesser.y--;
+            builddirection = 0; //this means we start building by moving in the x direction
         }
         else {
             lesser.x++;
+            builddirection = 1; //this means we start building by moving in the y direction
         }
-        CounterDiagonalWall counterDiagonalWall = new CounterDiagonalWall(lesser.x, greater.x, lesser.y, greater.y);
+        CounterDiagonalWall counterDiagonalWall = new CounterDiagonalWall(lesser.x, greater.x, lesser.y, greater.y, builddirection);
         return addWall(counterDiagonalWall);
     }
     return false;
