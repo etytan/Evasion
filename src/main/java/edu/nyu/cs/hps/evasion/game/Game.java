@@ -137,6 +137,12 @@ public class Game {
             }
             count++;
         }
+        if (count % 2 == 0) {
+            greater.x--;
+        }
+        else {
+            greater.y--;
+        }
         count = 0;
         while(!isOccupied(lesser)){
             if(lesser.equals(state.hunterPosAndVel.pos) || lesser.equals(state.preyPos)){
@@ -150,7 +156,13 @@ public class Game {
             }
             count++;
         }
-        DiagonalWall diagonalWall = new DiagonalWall(lesser.x+1, greater.x-1, lesser.y+1, greater.y-1);
+        if (count % 2 == 0) {
+            lesser.y++;
+        }
+        else {
+            lesser.x++;
+        }
+        DiagonalWall diagonalWall = new DiagonalWall(lesser.x, greater.x, lesser.y, greater.y);
         return addWall(diagonalWall);
     }
     else if (action == WallCreationType.COUNTERDIAGONAL) {
@@ -169,6 +181,12 @@ public class Game {
             }
             count++;
         }
+        if (count % 2 == 0) {
+            greater.x--;
+        }
+        else {
+            greater.y++;
+        }
         count = 0;
         while(!isOccupied(lesser)){
             if(lesser.equals(state.hunterPosAndVel.pos) || lesser.equals(state.preyPos)){
@@ -182,7 +200,13 @@ public class Game {
             }
             count++;
         }
-        CounterDiagonalWall counterDiagonalWall = new CounterDiagonalWall(lesser.x+1, greater.x-1, lesser.y-1, greater.y+1);
+        if (count % 2 == 0) {
+            lesser.y--;
+        }
+        else {
+            lesser.x++;
+        }
+        CounterDiagonalWall counterDiagonalWall = new CounterDiagonalWall(lesser.x, greater.x, lesser.y, greater.y);
         return addWall(counterDiagonalWall);
     }
     return false;
