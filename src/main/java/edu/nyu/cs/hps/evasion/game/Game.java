@@ -68,7 +68,7 @@ public class Game {
   }
 
   private boolean captured(){
-    if(state.hunterPosAndVel.pos.distance(state.preyPos) < 4.0){
+    if(state.hunterPosAndVel.pos.distance(state.preyPos) <= 4.0){
       List<Point> pts = BresenhamsAlgorithm.pointsBetween(state.hunterPosAndVel.pos, state.preyPos);
       for(Point pt : pts){
         if(isOccupied(pt)){
