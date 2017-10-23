@@ -223,7 +223,7 @@ public class GameHost {
       finalResult = "Tied! Both = " + p1AsPreyScore;
     } else {
       String winner = (p1AsPreyScore > p2AsPreyScore) ? io.getName(0) : io.getName(1);
-      finalResult = winner + " wins (" + io.getName(0) + " = " + p1AsPreyScore + ", " + io.getName(1) + " = " + p2AsPreyScore + ")";
+      finalResult = winner + " wins (" + io.getName(0) + " as hunter = " + p2AsPreyScore + ", " + io.getName(1) + " as hunter = " + p1AsPreyScore + ")";
     }
     System.out.println(finalResult);
     if(displayWriter != null) {
